@@ -409,8 +409,6 @@ public class Spreadsheet: UIView, SpreadsheetViewDelegate, UIGestureRecognizerDe
 
             if let indexPath = spreadsheetView.indexPathForItem(at: location) {
                 if let selectedCellRange = selectedCellRange, selectedCellRange.contains(indexPath) {
-                    print(selectedCellRange)
-                    print(selectionRange)
                     destinationSelectionRange = selectionRange
 
                     selectionView.leftCornerHandle.isHidden = true
