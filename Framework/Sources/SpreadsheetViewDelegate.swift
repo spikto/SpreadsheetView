@@ -80,6 +80,13 @@ public protocol SpreadsheetViewDelegate: class {
     ///   - spreadsheetView: The spreadsheet view object that is notifying you of the selection change.
     ///   - indexPath: The index path of the cell that was deselected.
     func spreadsheetView(_ spreadsheetView: SpreadsheetView, didDeselectItemAt indexPath: IndexPath)
+    /// Tells the delegate that the scrollView is scrolling
+    /// - Note: It's a mapping of the scrollViewDidScroll
+    ///
+    /// - Parameters:
+    ///   - spreadsheetView: The spreadsheet view object that is notifying you of the scrollView is moving.
+    ///   - scrollView: The scrollView view object that is notifying you of the scrollView.
+    func spreadsheetView(_ spreadsheetView: SpreadsheetView, didScroll scrollView: UIScrollView)
 }
 
 extension SpreadsheetViewDelegate {
@@ -90,4 +97,5 @@ extension SpreadsheetViewDelegate {
     public func spreadsheetView(_ spreadsheetView: SpreadsheetView, shouldDeselectItemAt indexPath: IndexPath) -> Bool { return true }
     public func spreadsheetView(_ spreadsheetView: SpreadsheetView, didSelectItemAt indexPath: IndexPath) {}
     public func spreadsheetView(_ spreadsheetView: SpreadsheetView, didDeselectItemAt indexPath: IndexPath) {}
+    public func spreadsheetView(_ spreadsheetView: SpreadsheetView, didScroll scrollView: UIScrollView) {}
 }
